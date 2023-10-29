@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Playfair+Display:ital@1&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Edu+TAS+Beginner&display=swap");
+.navTitleStyle {
+  font-family: "EB Garamond", serif;
+}
+.carousel-item img {
+  width: 100%;
+  height: 80vh;
+}
+.carousel-caption {
+  color: #fff; /* Set text color to white */
+  font-size: 24px; /* Set font size */
+  text-align: center; /* Center-align the text */
+}
+.about {
+  font-family: "Edu TAS Beginner", cursive;
+}
+.skills {
+  font-family: "Edu TAS Beginner", cursive;
+}
+
+.contact {
+  font-family: "Edu TAS Beginner", cursive;
+}
+
+.title {
+  font-family: "Edu TAS Beginner", cursive;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 75vh;
+  background-image: url("../assets/images/backgroundImage9.jpg"); /* Replace 'your-image.jpg' with the actual image file path */
+  position: relative;
+}
+.intro-section {
+  /* padding: 0 5%; */
+  width: 100%;
+  position: relative;
+  bottom: 15%;
+  align-items: center;
+  justify-content: center;
+  height: 101vh;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 5%;
+}
+.text-overlay {
+  position: absolute; /* Position the text relative to the container */
+  top: 50%; /* Position the text vertically in the middle of the container */
+  left: 50%; /* Position the text horizontally in the middle of the container */
+  transform: translate(-50%, -50%); /* Center the text properly */
+  height: 25vh;
+  color: white; /* Optional: Set text color */
+  padding: 10px; /* Optional: Add padding for readability */
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; Center vertically within the viewport */
+}
+
+.inputStyle {
+  background: none;
+  /* border-bottom: 2px solid #00b7c7;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px; */
+  border-bottom: 2px solid #00b7c7;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  color: #00b7c7;
+  box-shadow: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #ff3d00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
