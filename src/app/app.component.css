@@ -29,12 +29,16 @@
 
 .title {
   font-family: "Edu TAS Beginner", cursive;
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
+  background-size: cover;
   background-repeat: no-repeat;
+  /*
   background-attachment: fixed;
-  height: 75vh;
+  height: 70vh; */
   background-image: url("../assets/images/backgroundImage9.jpg"); /* Replace 'your-image.jpg' with the actual image file path */
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  height: 500px;
 }
 .intro-section {
   /* padding: 0 5%; */
