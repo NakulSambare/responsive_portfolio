@@ -38,7 +38,7 @@
           <li class="nav-item">
             <!-- <a class="nav-link navTitleStyle" href="#">Resume</a> -->
             <a id="downloadResume" class=" nav-link navTitleStyle" (mouseenter)="onMouseEnter()"
-              (mouseleave)="onMouseLeave()" target="_blank" href="../assets/pdf/Nakul_Sambare_Java_Developer_4.pdf">
+              (mouseleave)="onMouseLeave()" target="_blank" href="../assets/pdf/Nakul_Sambare_Java_Developer_5.pdf">
               <ng-container *ngIf="!isHovered; else hoveredContent">
                 <p class="text">Resume</p>
               </ng-container>
@@ -259,10 +259,14 @@
 
             <div class="row mt-3 text-left">
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
+                <!-- <ul style="list-style-type: none;padding-left: 0;">
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Oracle</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;MySQL</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;MongoDB</li>
+                </ul> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let db of databases">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{db}}</li>
+
                 </ul>
               </div>
             </div>

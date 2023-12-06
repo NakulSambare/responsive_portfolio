@@ -73,4 +73,6 @@ export class AppComponent {
   onMouseLeave() {
     this.isHovered = false;
   }
+
+  databases: Array<string> = ['MySQL', 'Oracle SQL', 'MongoDB'];
 }
