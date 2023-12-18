@@ -2,6 +2,10 @@ import { Component, AfterViewInit } from '@angular/core';
 import { ContactService } from './contact.service';
 import { Contact } from './Contact';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Skills } from './model/skills';
+import { SkillServiceService } from './skill-service.service';
+import { DocumentData } from '@angular/fire/firestore';
+
 declare var AOS: any;
 @Component({
   selector: 'app-root',
@@ -9,9 +13,16 @@ declare var AOS: any;
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private contactService: ContactService) {}
+  constructor(
+    private contactService: ContactService,
+    private skillService: SkillServiceService
+  ) {}
   ngAfterViewInit() {
     AOS.init(); // Initialize AOS once the component has been initialized
+    this.getLanguages();
+    this.getFramwork();
+    this.getDatabase();
+    this.getTools();
   }
   title = 'responsive_portfolio';
   isLoading: boolean = false;
@@ -74,5 +85,64 @@ export class AppComponent {
     this.isHovered = false;
   }
 
-  databases: Array<string> = ['MySQL', 'Oracle SQL', 'MongoDB'];
+  languageList: Skills[] = [];
+  frameworkList: Skills[] = [];
+  databaseList: Skills[] = [];
+  toolsList: Skills[] = [];
+  // getSkills(): void {
+  //   this.skillService.getLanguage()
+  //     .then((result: Skills[]) => {
+  //       this.languageList = result;
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error retrieving skills: ', error);
+  //     });
+  // }
+
+  getLanguages(): void {
+    this.skillService
+      .getLanguage()
+      .then((result: DocumentData[]) => {
+        this.languageList = result as Skills[];
+        console.log(this.languageList);
+      })
+      .catch((error) => {
+        console.error('Error retrieving skills: ', error);
+      });
+  }
+  getFramwork(): void {
+    this.skillService
+      .getFrameworks()
+      .then((result: DocumentData[]) => {
+        this.frameworkList = result as Skills[];
+        console.log(this.frameworkList);
+      })
+      .catch((error) => {
+        console.error('Error retrieving skills: ', error);
+      });
+  }
+
+  getDatabase(): void {
+    this.skillService
+      .getDatabases()
+      .then((result: DocumentData[]) => {
+        this.databaseList = result as Skills[];
+        console.log(this.databaseList);
+      })
+      .catch((error) => {
+        console.error('Error retrieving skills: ', error);
+      });
+  }
+
+  getTools(): void {
+    this.skillService
+      .getTools()
+      .then((result: DocumentData[]) => {
+        this.toolsList = result as Skills[];
+        console.log(this.toolsList);
+      })
+      .catch((error) => {
+        console.error('Error retrieving skills: ', error);
+      });
+  }
 }

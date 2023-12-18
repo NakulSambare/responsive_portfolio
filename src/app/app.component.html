@@ -212,16 +212,24 @@
 
             <div class="row mt-3 text-left">
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
+                <!-- <ul style="list-style-type: none;padding-left: 0;">
                   <li class=""><i class="fa-brands fa-java"></i>&nbsp;&nbsp;&nbsp;Java</li>
                   <li class=""><i class="fa-brands fa-js"></i>&nbsp;&nbsp;&nbsp;Javascript</li>
                   <li class=""><i class="fa-solid fa-database"></i>&nbsp;&nbsp;&nbsp;SQL</li>
+                </ul> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let lang of languageList| slice:0:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{lang.name}}</li>
+
                 </ul>
               </div>
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
-                  <li class=""><i class="fa-brands fa-html5"></i>&nbsp;&nbsp;&nbsp;HTML</li>
-                  <li class=""><i class="fa-brands fa-css3"></i>&nbsp;&nbsp;&nbsp;CSS</li>
+                <!-- <ul style="list-style-type: none;padding-left: 0;"> -->
+                <!-- <li class=""><i class="fa-brands fa-html5"></i>&nbsp;&nbsp;&nbsp;HTML</li>
+                  <li class=""><i class="fa-brands fa-css3"></i>&nbsp;&nbsp;&nbsp;CSS</li> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let lang of languageList| slice:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{lang.name}}</li>
+
+                  <!-- </ul> -->
                 </ul>
               </div>
             </div>
@@ -236,16 +244,22 @@
 
             <div class="row mt-3 text-left">
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
+                <!-- <ul style="list-style-type: none;padding-left: 0;">
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Spring Boot</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Spring MVC</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Angular</li>
+                </ul> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let frame of frameworkList| slice:0:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{frame.name}}</li>
                 </ul>
               </div>
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
+                <!-- <ul style="list-style-type: none;padding-left: 0;">
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Spring Security</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Junit</li>
+                </ul> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let frame of frameworkList| slice:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{frame.name}}</li>
                 </ul>
               </div>
             </div>
@@ -264,9 +278,15 @@
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;MySQL</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;MongoDB</li>
                 </ul> -->
-                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let db of databases">
-                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{db}}</li>
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let db of databaseList| slice:0:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{db.name}}</li>
 
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
+
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let db of databaseList| slice:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{db.name}}</li>
                 </ul>
               </div>
             </div>
@@ -282,19 +302,26 @@
 
             <div class="row mt-3 text-left">
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
-                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Eclipse</li>
+                <!-- <ul style="list-style-type: none;padding-left: 0;"> -->
+                <!-- <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Eclipse</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Spring Tool Suite (STS)
                   </li>
-                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Oracle SQL Developer</li>
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Oracle SQL Developer</li> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let tool of toolsList| slice:0:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{tool.name}}</li>
                 </ul>
+                <!-- </ul> -->
               </div>
               <div class="col-sm-12 col-md-6 colg-lg-6 col-12">
-                <ul style="list-style-type: none;padding-left: 0;">
-                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;MS Office</li>
+                <!-- <ul style="list-style-type: none;padding-left: 0;"> -->
+                <!-- <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;MS Office</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Win SCP</li>
                   <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;Putty</li>
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;IntelliJ IDEA</li> -->
+                <ul style="list-style-type: none;padding-left: 0;" *ngFor="let tool of toolsList|  slice:3">
+                  <li class=""><i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{tool.name}}</li>
                 </ul>
+                <!-- </ul> -->
               </div>
             </div>
           </div>
